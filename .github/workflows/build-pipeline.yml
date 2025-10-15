@@ -1,0 +1,26 @@
+name: Build and Test Pipeline - Kritish Soni
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Starting build process..."
+      - run: sleep 3
+      - run: |
+          echo "Build completed successfully"
+          echo "Built by Kritish Soni"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Running automated tests..."
+      - run: sleep 2
+      - run: date
+      - run: echo "All tests passed for Kritish Soni"
